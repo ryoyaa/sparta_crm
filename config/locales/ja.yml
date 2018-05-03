@@ -10,6 +10,8 @@ ja:
         email: "メールアドレス"
         company: "所属会社"
         post: "役職"
+        company_id: "所属会社"
+        post_id: "役職"
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
