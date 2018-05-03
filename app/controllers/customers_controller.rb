@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
+  before_action :set_companies, only: [:new, :edit, :update, :create]
 
   def index
     @customers = Customer.page(params[:page])
@@ -40,10 +41,14 @@ class CustomersController < ApplicationController
   private
 
   def customer_params
-    params.require(:customer).permit(:family_name, :given_name, :email)
+    params.require(:customer).permit(:family_name, :given_name, :email, :company_id)
   end
 
   def set_customer
     @customer = Customer.find(params[:id])
+  end
+
+  def set_companies
+    @companies = Company.all
   end
 end
