@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
+
   def index
   end
 
@@ -31,6 +32,8 @@ class CustomersController < ApplicationController
   end
 
   def destroy
+    @customer.destroy
+    redirect_to customers_path
   end
 
   private
